@@ -90,4 +90,5 @@ class TestCalculatorModuleIntegration:
         b_squared = power(4, 2)      # 16 
         sum_squares = add(a_squared, b_squared)  # 25 
         hypotenuse = square_root(sum_squares)    # 5 
+        
         assert hypotenuse == 5.0
