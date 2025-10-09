@@ -31,8 +31,7 @@ class TestCLIIntegration:
         assert result.stdout.strip() == "2"
 
     def test_cli_subtract_missing_operand_error(self):
-        """Test CLI handles missing operand for
-        subtraction gracefully"""
+        """Test CLI handles missing operand for subtraction gracefully"""
         # call subtract with only one operand; CLI should exit with non-zero and print an error
         result = self.run_cli("subtract", "5")
         assert result.returncode == 1
