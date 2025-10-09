@@ -5,7 +5,7 @@ Example: python src/cli.py add 5 3
 
 import sys
 import click
-from src.calculator import add, subtract, multiply, divide, power
+from src.calculator import add, subtract, multiply, divide, power, square_root
 
 
 @click.command()
@@ -23,6 +23,10 @@ def calculate(operation, num1, num2=None):
             result = multiply(num1, num2)
         elif operation == "divide":
             result = divide(num1, num2)
+        elif operation == "power": 
+            result = power(num1, num2) 
+        elif operation == "square_root" or operation == "sqrt": 
+            result = square_root(num1)
         else:
             click.echo(f"Unknown operation: {operation}")
             sys.exit(1)
