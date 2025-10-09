@@ -1,17 +1,13 @@
 """ 
 Command Line Interface for Calculator 
-Example: python src/cli.py add 5 3 
-""" 
- 
+Example: python src/cli.py add 5 3 """ 
 import sys 
 import click 
 from src.calculator import add, subtract, multiply, divide, power, square_root 
- 
 @click.command() 
 @click.argument("operation") 
 @click.argument("num1", type=float) 
 @click.argument("num2", type=float, required=False) 
-
 def calculate(operation, num1, num2=None):
      
     """Simple calculator CLI"""  
@@ -41,7 +37,7 @@ def calculate(operation, num1, num2=None):
     except ValueError as e: 
         click.echo(f"Error: {e}") 
         sys.exit(1) 
-    except Exception as e:  # pylint: disable=broadexception-caught 
+    except Exception as e:  # pylint: disable=broad-exception-caught 
         click.echo(f"Unexpected error: {e}") 
         sys.exit(1) 
  
