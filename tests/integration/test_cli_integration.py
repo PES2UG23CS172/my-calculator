@@ -55,6 +55,7 @@ class TestCLIIntegration:
         result = self.run_cli('sqrt', '16') 
         assert result.returncode == 0 
         assert result.stdout.strip() == '4'
+        
     def test_cli_error_handling_integration(self): 
         """Test CLI properly handles calculator errors""" 
         result = self.run_cli('divide', '10', '0') 
@@ -90,5 +91,5 @@ class TestCalculatorModuleIntegration:
         b_squared = power(4, 2)      # 16 
         sum_squares = add(a_squared, b_squared)  # 25 
         hypotenuse = square_root(sum_squares)    # 5 
-        
+
         assert hypotenuse == 5.0
