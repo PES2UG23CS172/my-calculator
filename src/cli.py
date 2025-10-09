@@ -5,7 +5,8 @@ Example: python src/cli.py add 5 3
 
 import sys
 import click
-from calculator import add, subtract, multiply, divide, power, square_root
+from src.calculator import add, subtract, multiply, divide, power
+
 
 @click.command()
 @click.argument("operation")
@@ -18,9 +19,9 @@ def calculate(operation, num1, num2=None):
             result = add(num1, num2)
         elif operation == "subtract":
             result = subtract(num1, num2)
-        elif operation == "multiply": 
-            result = multiply(num1, num2) 
-        elif operation == "divide": 
+        elif operation == "multiply":
+            result = multiply(num1, num2)
+        elif operation == "divide":
             result = divide(num1, num2)
         else:
             click.echo(f"Unknown operation: {operation}")
@@ -38,5 +39,7 @@ def calculate(operation, num1, num2=None):
     except Exception as e:
         click.echo(f"Unexpected error: {e}")
         sys.exit(1)
+
+
 if __name__ == "__main__":
     calculate()
